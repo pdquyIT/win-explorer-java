@@ -1,4 +1,5 @@
 package fileManagement;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -6,10 +7,9 @@ import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Container;
 import java.awt.Component;
-import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.*;
-import java.awt.image.*;
+
 
 import javax.swing.*;
 import javax.swing.border.*;
@@ -33,33 +33,20 @@ public class GUI {
 	public GUI() {
 	}
 
-    /** Title of the application */
     public static final String APP_TITLE = "Windows Explorer";
-    /** Used to open/edit/print files. */
     private Desktop desktop;
-    /** Provides nice icons and names for files. */
     private FileSystemView fileSystemView;
-
-    /** currently selected File. */
     private File currentFile;
-
-    /** Main GUI container */
     private JPanel gui;
-
-    /** File-system tree. Built Lazily */
     private JTree tree;
     private DefaultTreeModel treeModel;
-
-    /** Directory listing */
     private JTable table;
     private JProgressBar progressBar;
-    /** Table model for File[]. */
     private FileTableModel fileTableModel;
     private ListSelectionListener listSelectionListener;
     private boolean cellSizesSet = false;
     private int rowIconPadding = 6;
     private JButton newFile;
-    /* File details. */
     private JLabel fileName;
     private JTextField path;
     private JLabel date;
@@ -69,15 +56,14 @@ public class GUI {
     private JCheckBox executable;
     private JRadioButton isDirectory;
     private JRadioButton isFile;
-
-    /* GUI options/containers for new File/Directory creation.  Created lazily. */
     private JPanel newFilePanel;
     private JRadioButton newTypeFile;
     private JTextField name;
     private JPanel buttonAndPath;
     private JButton btnBack;
     private JButton btnNext;
-
+    private JLabel lblPermissionsForSystem;
+   
     public Container getGui() {
         if (gui==null) {
             gui = new JPanel(new BorderLayout(3,3));
@@ -87,8 +73,6 @@ public class GUI {
             desktop = Desktop.getDesktop();
 
             JPanel detailView = new JPanel(new BorderLayout(3,3));
-            //fileTableModel = new FileTableModel();
-
             table = new JTable();
             table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
             table.setAutoCreateRowSorter(true);
@@ -107,7 +91,6 @@ public class GUI {
             tableScroll.setPreferredSize(new Dimension((int)d.getWidth(), (int)d.getHeight()/2));
             detailView.add(tableScroll, BorderLayout.CENTER);
 
-            // the File tree
             DefaultMutableTreeNode root = new DefaultMutableTreeNode();
             treeModel = new DefaultTreeModel(root);
 
@@ -120,20 +103,16 @@ public class GUI {
                 }
             };
 
-            // show the file system roots.
             File[] roots = fileSystemView.getRoots();
             for (File fileSystemRoot : roots) {
                 DefaultMutableTreeNode node = new DefaultMutableTreeNode(fileSystemRoot);
                 root.add( node );
-                //showChildren(node);
-                //
                 File[] files = fileSystemView.getFiles(fileSystemRoot, true);
                 for (File file : files) {
                     if (file.isDirectory()) {
                         node.add(new DefaultMutableTreeNode(file));
                     }
                 }
-                //
             }
 
             tree = new JTree(treeModel);
@@ -142,8 +121,6 @@ public class GUI {
             tree.setCellRenderer(new FileTreeCellRenderer());
             tree.expandRow(0);
             JScrollPane treeScroll = new JScrollPane(tree);
-
-            // as per trashgod tip
             tree.setVisibleRowCount(15);
 
             Dimension preferredSize = treeScroll.getPreferredSize();
@@ -152,7 +129,7 @@ public class GUI {
                 (int)preferredSize.getHeight());
             treeScroll.setPreferredSize( widePreferred );
 
-            // details for a File
+
             JPanel fileMainDetails = new JPanel(new BorderLayout(4,2));
             fileMainDetails.setBorder(new EmptyBorder(0,6,0,6));
 
@@ -189,24 +166,27 @@ public class GUI {
             }
 
             JToolBar toolBar = new JToolBar();
-            // mnemonics stop working in a floated toolbar
+
             toolBar.setFloatable(false);
+            
+            lblPermissionsForSystem = new JLabel("      Permissions for SYSTEM");
+            lblPermissionsForSystem.setHorizontalAlignment(SwingConstants.TRAILING);
+            toolBar.add(lblPermissionsForSystem);
 
             toolBar.addSeparator();
 
             readable = new JCheckBox("Read  ");
             readable.setMnemonic('a');
-            //readable.setEnabled(false);
+
             toolBar.add(readable);
 
             writable = new JCheckBox("Write  ");
             writable.setMnemonic('w');
-            //writable.setEnabled(false);
+
             toolBar.add(writable);
 
             executable = new JCheckBox("Execute");
             executable.setMnemonic('x');
-            //executable.setEnabled(false);
             toolBar.add(executable);
 
             JPanel fileView = new JPanel(new BorderLayout(3,3));
@@ -217,8 +197,7 @@ public class GUI {
             detailView.add(fileView, BorderLayout.SOUTH);
             
             buttonAndPath = new JPanel();
-            
-            
+          
             
             
             gui.add(buttonAndPath, BorderLayout.NORTH);
@@ -231,6 +210,7 @@ public class GUI {
             btnBack.setIcon(new ImageIcon(GUI.class.getResource("/com/sun/javafx/scene/web/skin/Undo_16x16_JFX.png")));
             btnBack.addActionListener(new ActionListener() {
             	public void actionPerformed(ActionEvent e) {
+            		
             	}
             });
             buttonAndPath.add(btnBack);
@@ -279,7 +259,6 @@ public class GUI {
     }
 
     public void showRootFile() {
-        // ensure the main files are displayed
         tree.setSelectionInterval(0,0);
     }
 
@@ -294,7 +273,6 @@ public class GUI {
                 return treePath;
             }
         }
-        // not found!
         return null;
     }
 
@@ -348,7 +326,6 @@ public class GUI {
                         (DefaultMutableTreeNode)parentPath.getLastPathComponent();
 
                     if (file.isDirectory()) {
-                        // add the new node..
                         DefaultMutableTreeNode newNode = new DefaultMutableTreeNode(file);
 
                         TreePath currentPath = findTreePath(currentFile);
@@ -428,10 +405,8 @@ public class GUI {
     private void setColumnWidth(int column, int width) {
         TableColumn tableColumn = table.getColumnModel().getColumn(column);
         if (width<0) {
-            // use the preferred width of the header..
             JLabel label = new JLabel( (String)tableColumn.getHeaderValue() );
             Dimension preferred = label.getPreferredSize();
-            // altered 10->14 as per camickr comment.
             width = (int)preferred.getWidth()+14;
         }
         tableColumn.setPreferredWidth(width);
@@ -542,8 +517,6 @@ public class GUI {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    // Significantly improves the look of the output in
-                    // terms of the file names returned by FileSystemView!
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                 } catch(Exception weTried) {
                 }
@@ -564,7 +537,7 @@ public class GUI {
 
                 f.pack();
                 f.setLocationByPlatform(true);
-                f.setMinimumSize(f.getSize());
+                f.setMinimumSize(new Dimension(800, 450));
                 f.setVisible(true);
 
                 fileManager.showRootFile();
@@ -668,7 +641,6 @@ class FileTableModel extends AbstractTableModel {
     }
 }
 
-/** A TreeCellRenderer for a File. */
 class FileTreeCellRenderer extends DefaultTreeCellRenderer {
 
     private FileSystemView fileSystemView;

@@ -32,5 +32,5 @@ Sau khi mở các thư mục, xác định được vị trí đặt thư mục 
 Chức năng thêm:
 1.	Di chuyển thư mục hay tập tin: Click chuột phải vào thư mục nguồn hay tập tin muốn di chuyển, chọn Cut, Sau đó di chuyển đến thư mục đích và click chuột phải, chọn Paste.
 2.	Sao chép thư mục hay tập tin: Click chuột phải vào thư mục nguồn hay tập tin muốn sao chép, chọn Copy. Sau đó di chuyển đến thư mục đích và click chuột phải, chọn Paste.
-3.	Xóa thư mục hay tập tin: Click chuột phải vào thư mục hay tập tin muốn xóa, chọn Delete. Hộp thoại Select an Option xác nhận xóa xuất hiện với dòng thông báo: Are you sure want to delete [tên file hay thư mục cần xóa]? Chọn Yes để xóa, No hay Cancel để Hủy thao tác này.
+3.	Xóa thư mục hay tập tin: Click chuột phải vào thư mục hay tập tin muốn xóa, chọn Delete. Hộp thoại Select an Option xác nhận xóa xuất hiện với dòng thông báo: Are you sure want to delete [tên file hay thư mục cần xóa]? Chọn Yes để xóa, No hay Cancel để Hủy thao tác này. Sau khi xóa thành công, sẽ xuất hiện 1 thông báo: Message: Delete Successfully.
 4.	Xem thông tin của thư mục hay tập tin: Click chuột phải vào thư mục hay tập tin muốn xem thông tin, chọn Properties. Hộp thọa Properties xuất hiện cũng với các thông tin về file hay folder cần xem.

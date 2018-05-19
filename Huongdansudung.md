@@ -17,7 +17,7 @@ Sau đó tại trường Navigator, Click chuột phải vào Java Project MidTe
 Bước tiếp theo, cũng  tại trường Navigator, Click chuột phải vào windowsExplorer . Chọn New Jframe (Nếu không có, chọn Other/WindowsBuilder/Swing Designer/Jframe). Một cửa sổ mới (New Java Package) xuất hiện. Tại trường Name, điền vào ô trống đó có nội dung sau: TreeInJava và sau đó nhấn nút Finish.
 Tiếp theo, trong thư mục giải nén được ở trên, copy các file trong thư mục Images dán trực tiếp vào thư mục cùng cấp lưu trữ Java Project. Ví dụ: Dán trực tiếp vào: This PC\E:\MidTestJava.
 Quay lại Eclipse, click chuột phải vào MidTest trong trường Navigator chọn Properties, Chọn Java Build Path, Chọn Libraries, Chọn Add External JARs, sau đó chỉ đến file commons-io-2.6.jar đã giải nén ban đầu. Sau đó chọn Apply and Close.
-Mở Class TreeInJava.java lên, sau đó copy toàn bộ đoạn code trong file TreeInJava.java download về được, dán vào class này. Và sau đó chạy Class này để thực thi chương trình.
+Mở Class TreeInJava.java lên, sau đó copy toàn bộ đoạn code trong file TreeInJava.java download về được, dán vào class này. Lưu lại và sau đó chạy Class này để thực thi chương trình.
 Giao diện cơ bản của chương trình Windows Explorer sau khi chạy:
 Bên tay trái là cây thư mục liệt kê tất cả các tài nguyên của máy: các ổ đĩa, thư mục. Bên tay phải là các thư mực, tập tin tương ứng khi click vào thư mục trong cây thư mục bên. Phía trên là các nút chức năng như Lùi lại thư mục qua, hay Bước đến thư mục mình đã hủy trước đó, ngoài ra còn thông tin đường dẫn đến thư mục hay tập tin đang chọn, cũng như ô tìm kiếm kế bên.
 + Click trái vào dấu (+) đứng trước một đối tượng thì trong cây thư mục sẽ hiện tiếp các thư mục con của đối tượng này. 

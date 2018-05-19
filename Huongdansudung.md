@@ -1,9 +1,21 @@
 Họ và tên sinh viên: Phạm Đình Quý
+
+
 Lớp 17IT2 - Java Nâng cao (2)
+
+
 Mã SV: 17IT092
+
+
 Email: phdinhquy@gmail.com
+
+
 Mã đề: 11
+
+
 Nội dung hướng dẫn:
+
+
 Lời đầu tiên, em xin cảm ơn thầy đã đến với chương trình Windows Explorer – bài thi giữa kỳ môn Java nâng cao của sinh viên Phạm Đình Quý – Lớp Java Nâng cao (2).
 Để chương trình của em có thể chạy hoàn chỉnh, vui lòng Thầy làm theo các bước sau.
 Trong link bài em nộp sẽ có 4 file, Thầy có thể load về máy tính của thầy đủ cả 4 hoặc có thể ít hơn, tuy nhiên file TreeInJava.java và LibraryBonus.rar thì phải load về để chương trình của em có thể chạy tốt, 4 file đó là: 

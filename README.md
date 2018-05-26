@@ -20,17 +20,17 @@ Mở cmd
 
 Dùng lệnh cd chuyển đến thư mục chứa source code
 
-Ví dụ: cd C:\Users\Administrator\Desktop\thigiuaki2\src
+Ví dụ: cd C:\Users\Administrator\Desktop\windowsExlorer\src
 
 
 Biên dịch bằng lệnh javac:
 
-javac thigiuaki2\TreeInJava.java
+javac windowsExlorer\TreeInJava.java
 
 
 Chạy bằng lệnh java:
 
-java thigiuaki2.TreeInJava
+java windowsExlorer.TreeInJava
 
 
 HƯỚNG DẪN SỬ DỤNG:

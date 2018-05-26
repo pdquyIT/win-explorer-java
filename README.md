@@ -10,7 +10,7 @@ Câu 2: Chức năng: Tạo thư mục mới.
 
 Chức năng làm thêm: Mở, xóa, di chuyển, copy và xem thông tin tập tin/thư mục.
 
--Video hương dẫn sử dụng: https://www.youtube.com/watch?v=838bUd9vx3A&feature=youtu.be
+-Video hướng dẫn sử dụng: https://www.youtube.com/watch?v=838bUd9vx3A&feature=youtu.be
 
 CÁCH CHẠY CODE:
 
@@ -39,7 +39,7 @@ Mở các thư mục bằng cách click 2 lần vào thư mục trong JTree cũn
 
 Chức năng chính:
 
-Tạo tập thư mực:
+Tạo mới thư mực:
 
 Đầu tiên: Click chuột phải vào khoảng trống bên cửa sổ bên cạnh JTree chọn New Folder
 

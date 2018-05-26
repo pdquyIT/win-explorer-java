@@ -12,6 +12,10 @@ Chức năng làm thêm: Mở, xóa, di chuyển, copy và xem thông tin tập 
 
 -Video hướng dẫn sử dụng: https://www.youtube.com/watch?v=838bUd9vx3A&feature=youtu.be
 
+
+-------------------------------
+
+
 CÁCH CHẠY CODE:
 
 Tải project từ github
@@ -31,6 +35,9 @@ javac windowsExlorer\TreeInJava.java
 Chạy bằng lệnh java:
 
 java windowsExlorer.TreeInJava
+
+
+-------------------------------
 
 
 HƯỚNG DẪN SỬ DỤNG:
@@ -62,6 +69,7 @@ Xem thông tin của thư mục hay tập tin: Click chuột phải vào thư m�
 
 
 -------------------------------
+
 
 Biên dịch các dòng lệnh:
 

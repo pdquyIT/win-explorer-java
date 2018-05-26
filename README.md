@@ -24,7 +24,7 @@ Mở cmd
 
 Dùng lệnh cd chuyển đến thư mục chứa source code
 
-Ví dụ: cd C:\Users\Administrator\Desktop\windowsExlorer\src
+Ví dụ: cd C:\Users\Administrator\Desktop\thigiuaky2\src\windowsExplorer
 
 
 Biên dịch bằng lệnh javac:
@@ -73,4 +73,30 @@ Xem thông tin của thư mục hay tập tin: Click chuột phải vào thư m�
 
 Biên dịch các dòng lệnh:
 
+public class TreeInJava ():
 
+Hiển thị các thành phần và chức năng của phần mềm
+
+
+public TreeInJava():
+
+Hiển thị Cây thư mục (JTree)
+
+public void loadDisk ()
+
+Load các ổ đĩa trong máy hiện hành.
+
+
+public void loadFolder ()
+
+Load các thư mục có trong ổ đĩa hiện hành.
+
+
+public void loadFile ()
+
+Load các tập tin có trong ổ đĩa hoặc thư mục hiện hành.
+
+
+public void delete()
+
+Hàm chức năng xóa thư mục hoặc tập tin

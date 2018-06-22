@@ -10,7 +10,7 @@ Câu 2: Chức năng: Tạo thư mục mới.
 
 Chức năng làm thêm: Mở, xóa, di chuyển, copy và xem thông tin tập tin/thư mục.
 
--Video hướng dẫn sử dụng: https://www.youtube.com/watch?v=838bUd9vx3A&feature=youtu.be
+-Video hướng dẫn sử dụng: https://youtu.be/XrnW9vVPZaw
 
 
 -------------------------------

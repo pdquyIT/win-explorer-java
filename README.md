@@ -24,17 +24,17 @@ Mở cmd
 
 Dùng lệnh cd chuyển đến thư mục chứa source code
 
-Ví dụ: cd C:\Users\Administrator\Desktop\thigiuaky2\src\windowsExplorer
+Ví dụ: cd C:\Users\Admin\eclipse-workspace\WindowsExplorer\src
 
 
 Biên dịch bằng lệnh javac:
 
-javac windowsExlorer\TreeInJava.java
+javac FileExplorer.java
 
 
 Chạy bằng lệnh java:
 
-java windowsExlorer.TreeInJava
+java FileExplorer
 
 
 -------------------------------
@@ -42,30 +42,32 @@ java windowsExlorer.TreeInJava
 
 HƯỚNG DẪN SỬ DỤNG:
 
-Mở các thư mục bằng cách click 2 lần vào thư mục trong JTree cũng như trong cửa sổ bên cạnh.
+Mở các thư mục bằng cách click chuột trái 1 lần vào thư mục trong JTree cũng như trong cửa sổ bên cạnh.
 
 Chức năng chính:
 
 Tạo mới thư mực:
 
-Đầu tiên: Click chuột phải vào khoảng trống bên cửa sổ bên cạnh JTree chọn New Folder
+Đầu tiên: Chọn nơi chứa thư mục cần tạo ở khung JTree hoặc  bên cửa sổ bên cạnh JTree chọn Nút New. 
 
-Tiếp theo: Gõ tên cho thư mục cần tạo
 
-Sau đó: Nhấn "OK"
+Cửa sổ xuất hiện, chọn Directory
+
+Tiếp theo: Gõ tên cho thư mục cần tạo  vào ô trống Name
+
+Sau đó: Chọn Ok để xác nhận tạo thư mục mới hoặc nhấn Cancel để hủy thao tác vừa làm. 
+
 
 Chức năng làm thêm:
 
-Di chuyển thư mục hay tập tin: Click chuột phải vào thư mục nguồn hay tập tin muốn di chuyển, chọn Cut, Sau đó di chuyển đến thư mục đích và click chuột phải, chọn Paste.
+
+Mở 1 tập tin hay thư mục: Click chuột trái vào thư mục hay tập tin cần mở, chọn nút Open để mở tập tin hay thư mục tương ứng đã chọn.
 
 
-Sao chép thư mục hay tập tin: Click chuột phải vào thư mục nguồn hay tập tin muốn sao chép, chọn Copy. Sau đó di chuyển đến thư mục đích và click chuột phải, chọn Paste.
+Đổi tên tập tin: Click chuột trái vào tập tin cần thay đổi tên, chọn nút Rename File để mở cửa sổ mới. Khi cửa sổ mới xuất hiện, ta nhập tên mới của tập tin cần thay đổi tên vào khoảng trống của ô New Name, Sau đó: Chọn Ok để xác nhận thực thi đổi tên mới cho tập tin đã chọn hoặc nhấn Cancel để hủy thao tác vừa làm.   
 
 
-Xóa thư mục hay tập tin: Click chuột phải vào thư mục hay tập tin muốn xóa, chọn Delete. Hộp thoại Select an Option xác nhận xóa xuất hiện với dòng thông báo: Are you sure want to delete [tên file hay thư mục cần xóa]? Chọn Yes để xóa, No hay Cancel để Hủy thao tác này. Sau khi xóa thành công, sẽ xuất hiện 1 thông báo: Message: Delete Successfully.
-
-
-Xem thông tin của thư mục hay tập tin: Click chuột phải vào thư mục hay tập tin muốn xem thông tin, chọn Properties. Hộp thọa Properties xuất hiện cũng với các thông tin về file hay folder cần xem.
+Xóa tập tin: Click chuột trái vào tập tin cần xóa, chọn Delete File. Một cửa sổ mới xuất hiện, để xóa tập tin đang chọn ta nhấn Ok hoặc nhấn Cancel để hủy thao tác vừa làm.   
 
 
 -------------------------------
@@ -73,30 +75,29 @@ Xem thông tin của thư mục hay tập tin: Click chuột phải vào thư m�
 
 Biên dịch các dòng lệnh:
 
-public class TreeInJava ():
-
-Hiển thị các thành phần và chức năng của phần mềm
 
 
-public TreeInJava():
-
-Hiển thị Cây thư mục (JTree)
-
-public void loadDisk ()
-
-Load các ổ đĩa trong máy hiện hành.
+public class FileExplorer (): Hiển thị các thành phần và chức năng của phần mềm
 
 
-public void loadFolder ()
-
-Load các thư mục có trong ổ đĩa hiện hành.
+public Container getGui(): Hiển thị giao diện của phần mềm, gồm: Khung chương trình, các thành phần cũng như các nút chức  năng của chương trình.
 
 
-public void loadFile ()
+newFile.addActionListener(new ActionListener() Hàm thực hiện bắt sự kiện cho chức năng tạo mới tập tin hay thư mục, khi ta click vào nút.
 
-Load các tập tin có trong ổ đĩa hoặc thư mục hiện hành.
+private void newFile() Hàm thực hiện chức năng tạo mới tập tin hay thư mục
 
 
-public void delete()
+openFile.addActionListener(new ActionListener() Hàm thực hiện bắt sự kiện cho chức năng mở tập tin hay thư mục, khi ta click vào nút.
 
-Hàm chức năng xóa thư mục hoặc tập tin
+
+deleteFile.addActionListener(new ActionListener() Hàm thực hiện bắt sự kiện cho chức năng xóa tập tin, khi ta click vào nút.
+
+
+private void deleteFile()Hàm thực hiện chức năng xóa tập tin.
+
+
+remaneFile.addActionListener(new ActionListener() Hàm thực hiện bắt sự kiện cho chức năng thay đổi tên tập tin, khi ta click vào nút.
+
+
+private void renameFile() Hàm thực hiện chức năng thay đổi tên tập tin
